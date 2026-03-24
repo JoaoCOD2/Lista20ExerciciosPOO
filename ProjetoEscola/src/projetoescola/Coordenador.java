@@ -9,6 +9,18 @@ package projetoescola;
  *
  * @author aluno.saolucas
  */
-public class Coordenador {
-    
+public class Coordenador extends Pessoa {
+
+    public Coordenador(String nome, int idade) {
+        super(nome, idade);
+    }
+
+    public void trabalhar() {
+        System.out.println("Estou coordenando a escola.");
+    }
+
+    @Override
+    public void apresentar() {
+        System.out.println("Sou coordenador e meu nome é " + getNome());
+    }
 }
