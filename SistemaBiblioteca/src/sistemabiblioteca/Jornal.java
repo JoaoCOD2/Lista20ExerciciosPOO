@@ -9,6 +9,20 @@ package sistemabiblioteca;
  *
  * @author joaop
  */
-public class Jornal {
-    
+public class Jornal extends ItemBiblioteca {
+    private String dataPublicacao;
+    private String cidade;
+    private String tipo;
+
+    public Jornal(String titulo, String codigo, boolean disponivel, String dataPublicacao, String cidade, String tipo) {
+        super(titulo, codigo, disponivel);
+        this.dataPublicacao = dataPublicacao;
+        this.cidade = cidade;
+        this.tipo = tipo;
+    }
+
+    @Override
+    public void emprestar() {
+        System.out.println("Jornais não podem ser emprestados ❌");
+    }
 }
