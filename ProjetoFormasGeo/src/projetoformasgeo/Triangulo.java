@@ -9,6 +9,37 @@ package projetoformasgeo;
  *
  * @author joaop
  */
-public class Triangulo {
-    
+public class Triangulo extends Forma {
+    private double base;
+    private double altura;
+    private String tipo;
+
+    public Triangulo(String nome, String cor, double base, double altura) {
+        super(nome, cor);
+        this.base = base;
+        this.altura = altura;
+    }
+
+    @Override
+    public double calcularArea() {
+        double area = (base * altura) / 2;
+        setArea(area);
+        return area;
+    }
+
+    public double getBase() {
+        return base;
+    }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
 }

@@ -9,6 +9,40 @@ package sistemanot;
  *
  * @author joaop
  */
-public class Notificacao {
-    
+public abstract class Notificacao {
+    private String destinatario;
+    private String mensagem;
+    private String data;
+
+    public Notificacao(String destinatario, String mensagem, String data) {
+        this.destinatario = destinatario;
+        this.mensagem = mensagem;
+        this.data = data;
+    }
+
+    public abstract void enviar();
+
+    public String getDestinatario() {
+        return destinatario;
+    }
+
+    public void setDestinatario(String destinatario) {
+        this.destinatario = destinatario;
+    }
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
 }

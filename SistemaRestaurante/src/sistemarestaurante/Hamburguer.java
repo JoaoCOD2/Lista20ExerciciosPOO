@@ -9,6 +9,30 @@ package sistemarestaurante;
  *
  * @author joaop
  */
-public class Hamburguer {
-    
+public class Hamburguer extends ItemCardapio {
+    private boolean queijoExtra;
+    private boolean bacon;
+    private String tipoPao;
+
+    public Hamburguer(String nome, double preco, String descricao, boolean queijoExtra, boolean bacon, String tipoPao) {
+        super(nome, preco, descricao);
+        this.queijoExtra = queijoExtra;
+        this.bacon = bacon;
+        this.tipoPao = tipoPao;
+    }
+
+    @Override
+    public void preparar() {
+        System.out.println("Montando hambúrguer 🍔");
+    }
+
+    @Override
+    public double calcularPreco() {
+        double precoFinal = getPreco();
+
+        if (queijoExtra) precoFinal += 2;
+        if (bacon) precoFinal += 3;
+
+        return precoFinal;
+    }
 }
